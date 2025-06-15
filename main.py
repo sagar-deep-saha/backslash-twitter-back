@@ -15,8 +15,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",  # FrontEnd
         "http://localhost:5174",   # TwitterClone
-        "https://backslash-twitter-clone-five.vercel.app",   # TwitterClone2
-        "https://backslash-twitter-back-xi.vercel.app"   # TwitterClone2
+        "https://backslash-twitter-clone-five.vercel.app",   # Production Frontend
+        "https://backslash-front.vercel.app"   # Main Frontend
     ],
     allow_credentials=True,
     allow_methods=["*"],
