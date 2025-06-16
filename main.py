@@ -14,7 +14,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",  # FrontEnd
-        "http://localhost:5174",   # TwitterClone
+        "http://localhost:5177",   # TwitterClone
         "https://backslash-twitter-clone-five.vercel.app",   # Production Frontend
         "https://backslash-front.vercel.app"   # Main Frontend
     ],
@@ -75,7 +75,7 @@ app.include_router(router)
 
 if __name__ == "__main__":
     import uvicorn
+    # For local development
     # uvicorn.run(app, host="127.0.0.1", port=8001)
-    # uvicorn.run(app, host="0.0.0.0", port=8001)
-    # uvicorn.run(app, host="https://backslash-twitter-back.vercel.app/", port=8001) 
+    # For production (Vercel)
     uvicorn.run(app)
