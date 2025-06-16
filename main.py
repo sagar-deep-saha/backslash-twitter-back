@@ -17,7 +17,8 @@ app.add_middleware(
         "http://localhost:5177",   # TwitterClone local
         "https://backslash-twitter-clone-five.vercel.app",   # Production TwitterClone
         "https://back-slash-front-ui.vercel.app",   # Main Frontend
-        "https://backslash-twitter-clone.onrender.com"   # Render Frontend
+        "https://backslash-twitter-clone.onrender.com",   # Render Frontend
+        "https://backslash-twitter-back-xi.vercel.app"   # Backend
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -29,6 +30,7 @@ app.add_middleware(
 @app.middleware("http")
 async def log_requests(request, call_next):
     print(f"Incoming request: {request.method} {request.url}")
+    print(f"Request headers: {request.headers}")
     try:
         response = await call_next(request)
         print(f"Response status: {response.status_code}")
